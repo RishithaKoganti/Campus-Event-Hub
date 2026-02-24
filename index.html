@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Campus Hub</title>
+  <!-- Favicon and touch icon (appears in tab / taskbar when pinned) -->
+  <link rel="icon" href="images/bvrit.jpg" sizes="32x32" type="image/jpeg">
+  <link rel="apple-touch-icon" href="images/bvrit.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+</head>
+<body>
+  <header>
+    <!-- Logo + Title -->
+    <div class="logo">
+      <img src="images/bvrit.jpg" alt="Event Campus Hub Logo">
+      <h1> BVRIT EVENT CAMPUS HUB</h1>
+    </div>
+
+    <!-- Login & Signup -->
+    <div class="auth-buttons">
+      <a href="#" id="loginBtn">Login</a>
+      <a href="#" id="signupBtn">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- SIGNUP MODAL -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSignup">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="text" id="signupRollNo" placeholder="Roll No" required>
+        <input type="email" id="signupEmail" placeholder="Email (must end with @bvrit.ac.in)" required>
+        <select id="signupDept" required>
+          <option value="">Select Department</option>
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="ME">ME</option>
+          <option value="CE">CE</option>
+          <option value="EEE">EEE</option>
+        </select>
+        <input type="tel" id="signupPhone" placeholder="Phone Number (10 digits)" required>
+        <button type="submit" class="btn-submit">Sign Up</button>
+      </form>
+      <p id="signupError" class="error-message"></p>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeLogin">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div id="loginEmailStep">
+          <input type="email" id="loginEmail" placeholder="Email (registered @bvrit.ac.in)" required>
+          <button type="button" id="requestOtpBtn" class="btn-submit">Request OTP</button>
+        </div>
+        <div id="loginOtpStep" style="display:none;">
+          <p>An OTP has been sent to your email.</p>
+          <input type="text" id="loginOtp" placeholder="Enter 6-digit OTP" maxlength="6" required>
+          <button type="submit" class="btn-submit">Verify & Login</button>
+        </div>
+      </form>
+      <p id="loginError" class="error-message"></p>
+    </div>
+  </div>
+
+  <!-- Slider Container -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="images/baja1.jpg" alt="EBAJA Event" />
+        <div class="slide-caption">
+          <h2>EBAJA — India’s Leading ATV Competition</h2>
+          <p>In collaboration with Vishnu Motorsports</p>
+          <a href="ebaja-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="images/baja2.jpg" alt="BAJA Event" />
+        <div class="slide-caption">
+          <h2>BAJA — India’s Leading ATV Motorsports</h2>
+          <p>70+ teams focusing on engineering, design, and 4-hour endurance</p>
+          <a href="baja-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="images/athenes1.jpg" alt="ATHENES Event" />
+        <div class="slide-caption">
+          <h2>ATHENES — BVRIT'S MOST CELEBRATED ANNUAL FEAST </h2>
+          <p>Annual celebration of cultural activities including dance, music, band performances at BVRIT</p>
+          <a href="athenes-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="images/traditional1.jpg" alt="AVIRBHAV Event" />
+        <div class="slide-caption">
+          <h2>AVIRBHAV — TRADITIONAL DAY IN BVRIT</h2>
+          <p> Major event where students,faculty come together to display traditional attire,music,dance and art.</p>
+          <a href="avirbhav-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+      <!-- Slide 5 -->
+      <div class="swiper-slide">
+        <img src="images/boat.jpg" alt="CONCRETE CANOE COMPETITION Event" />
+        <div class="slide-caption">
+          <h2>CONCRETE CANOE COMPETITION — ENGINEERING MARVEL ON WATER</h2>
+          <p>Students design, build, and race concrete canoes, showcasing engineering skills and teamwork.</p>
+          <a href="concretecanoe-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+          <!-- Slide 6 -->
+      <div class="swiper-slide">
+        <img src="images/expo1.jpg" alt="AUTO-EXPO Event" />
+        <div class="slide-caption">
+          <h2>AUTO-EXPO — AN ABSOLUTE BLAST OF OVERPOWERED ENGINES</h2>
+          <p>Exhibition of the fastest and wildest vehicles.</p>
+          <a href="autoexpo-details.html" class="learn-more">Learn More</a>
+          </div>
+          </div>
+          <!-- Slide 7-->
+      <div class="swiper-slide">
+        <img src="images/expo2.jpg" alt="AUTO-EXPO Event" />
+        <div class="slide-caption">
+          <h2>AUTO-EXPO — EXCITEMENT TO WATCH THE BEASTS INCREASES!!</h2>
+          <p>These machines showcase their absolute power with eyefeasting drifts and revs.</p>
+          <a href="autoexpo-details.html" class="learn-more">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+<section class="events-section">
+  <h1 class="events-title">BVRIT CAMPUS EVENTS</h1>
+
+  <div class="events-grid">
+    <!-- Event 1 -->
+    <div class="event-card" data-event-id="athenes" data-event-name="ATHENES" data-event-description="BVRIT's most celebrated annual feast of cultural activities">
+      <img src="images/athenesposter.jpg" alt="ATHENES" class="event-img">
+      <div class="event-card-content">
+        <h3 style="margin:0; font-size:18px;">ATHENES</h3>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card" data-event-id="avirbhav" data-event-name="AVIRBHAV" data-event-description="Traditional day celebration at BVRIT">
+      <img src="images/avirbhavposter.jpg" alt="AVIRBHAV" class="event-img">
+      <div class="event-card-content">
+        <h3 style="margin:0; font-size:18px;">AVIRBHAV</h3>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="event-card" data-event-id="baja" data-event-name="BAJA" data-event-description="India's leading ATV motorsports competition">
+      <img src="images/bajaposter.jpg" alt="BAJA" class="event-img">
+      <div class="event-card-content">
+        <h3 style="margin:0; font-size:18px;">BAJA</h3>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="event-card" data-event-id="canoe" data-event-name="CONCRETE CANOE COMPETITION" data-event-description="Engineering marvel on water">
+      <img src="images/canoeposter.jpg" alt="CONCRETE CANOE COMPETITION" class="event-img">
+      <div class="event-card-content">
+        <h3 style="margin:0; font-size:18px;">CONCRETE CANOE COMPETITION</h3>
+      </div>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="event-card" data-event-id="autoexpo" data-event-name="AUTO-EXPO" data-event-description="Exhibition of the fastest and wildest vehicles">
+      <img src="images/expoposter.jpg" alt="AUTO-EXPO" class="event-img">
+      <div class="event-card-content">
+        <h3 style="margin:0; font-size:18px;">AUTO-EXPO</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EVENT DETAIL MODAL -->
+  <div id="eventDetailModal" class="event-detail-modal">
+    <div class="event-detail-container">
+      <!-- Close Button -->
+      <span class="event-detail-close">&times;</span>
+      
+      <!-- Sidebar Navigation -->
+      <div class="event-sidebar">
+        <h3 class="event-name-sidebar"></h3>
+        <nav class="sidebar-menu">
+          <a href="#" class="sidebar-item active" data-section="about">ABOUT</a>
+          <a href="#" class="sidebar-item" data-section="images">IMAGES</a>
+          <a href="#" class="sidebar-item" data-section="schedule">EVENT SCHEDULE</a>
+          <a href="#" class="sidebar-item" data-section="stalls">STALLS</a>
+          <a href="#" class="sidebar-item" data-section="guests">CHIEF GUESTS</a>
+        </nav>
+      </div>
+      
+      <!-- Main Content Area -->
+      <div class="event-content-area">
+        <!-- About Section -->
+        <section class="event-section active" id="section-about">
+          <h2>About <span class="event-title"></span></h2>
+          <p id="about-content"></p>
+        </section>
+        
+        <!-- Images Section -->
+        <section class="event-section" id="section-images">
+          <h2>Event Images</h2>
+          <div class="event-images-grid" id="images-content">
+            <!-- Images will be loaded here -->
+          </div>
+        </section>
+        
+        <!-- Event Schedule Section -->
+        <section class="event-section" id="section-schedule">
+          <h2>Event Schedule</h2>
+          <div id="schedule-content"></div>
+        </section>
+        
+        <!-- Stalls Section -->
+        <section class="event-section" id="section-stalls">
+          <h2>Stalls & Vendors</h2>
+          <div id="stalls-content"></div>
+        </section>
+        
+        <!-- Chief Guests Section -->
+        <section class="event-section" id="section-guests">
+          <h2>Chief Guests</h2>
+          <div id="guests-content"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Slider Container (moved below events) -->
+  <div class="swiper myVideoSwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <video class="slide-video" muted playsinline preload="metadata" poster="images/baja1.jpg">
+          <source src="images/videos/ebaja.mp4" type="video/mp4">
+        </video>
+        <div class="slide-caption">
+          <h2>EBAJA — India’s Leading ATV Competition</h2>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <video class="slide-video" muted playsinline preload="metadata" poster="images/traditional1.jpg">
+          <source src="images/videos/avirbhav.mp4" type="video/mp4">
+        </video>
+        <div class="slide-caption">
+          <h2>AVIRBHAV — TRADITIONAL DAY IN BVRIT</h2>
+          <p>Major event where students and faculty come together to display traditional attire, music, dance and art.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <video class="slide-video" muted playsinline preload="metadata" poster="images/expo2.jpg">
+          <source src="images/videos/autoexpo.mp4" type="video/mp4">
+        </video>
+        <div class="slide-caption">
+          <h2>AUTO-EXPO — EXCITEMENT TO WATCH THE BEASTS INCREASES!!</h2>
+          <p>These machines showcase their absolute power with eye-feasting drifts and revs.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <img src="images/bvrit.jpg" alt="Event Campus Hub Logo">
+    <span class="footer-institute">B.V.RAJU INSTITUTE OF TECHNOLOGY</span>
+  </div>
+
+  <div class="contact-section">
+    <h3 style="margin-bottom:10px;">Contact Us</h3>
+    <p>Abhiram Krishna</p>
+    <p>BaitakPatil Abhishek Rao</p>
+    <p>Srikaran Reddy</p>
+  </div>
+
+  <div class="copyright">
+    © 2026 BVRIT All rights reserved | Vishnu Educational Society
+  </div>
+</footer>
+</body>
+</html>
