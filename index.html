@@ -20,8 +20,10 @@
 
     <!-- Login & Signup -->
     <div class="auth-buttons">
+      <a href="#" id="dashboardBtn" style="display: none;">Dashboard</a>
       <a href="#" id="loginBtn">Login</a>
       <a href="#" id="signupBtn">Sign Up</a>
+      <a href="#" id="logoutBtn" style="display: none;">Logout</a>
     </div>
   </header>
 
@@ -32,15 +34,21 @@
       <h2>Sign Up</h2>
       <form id="signupForm">
         <input type="text" id="signupName" placeholder="Full Name" required>
-        <input type="text" id="signupRollNo" placeholder="Roll No" required>
         <input type="email" id="signupEmail" placeholder="Email (must end with @bvrit.ac.in)" required>
         <select id="signupDept" required>
           <option value="">Select Department</option>
           <option value="CSE">CSE</option>
+          <option value="CSD">CSD</option>
+          <option value="AIML">AIML</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
           <option value="ECE">ECE</option>
-          <option value="ME">ME</option>
-          <option value="CE">CE</option>
           <option value="EEE">EEE</option>
+          <option value="BIOMED">BIOMED</option>
+          <option value="CHEM">CHEM</option>
+          <option value="CSBS">CSBS</option>
+          <option value="IT">IT</option>
+          <option value="PHARMA">PHARMA</option>
         </select>
         <input type="tel" id="signupPhone" placeholder="Phone Number (10 digits)" required>
         <button type="submit" class="btn-submit">Sign Up</button>

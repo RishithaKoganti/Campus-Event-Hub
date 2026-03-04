@@ -61,7 +61,8 @@ header {
 
     .swiper {
       width: 100%;
-      height: min(60vh, 500px);
+      height: 80vh;
+      max-height: 700px;
       position: relative;
     }
 
@@ -728,7 +729,8 @@ header {
       }
 
       .swiper {
-        height: min(40vh, 360px);
+        height: 60vh;
+        max-height: 500px;
       }
 
       .slide-caption {
@@ -759,6 +761,6 @@ header {
 
     @media (min-width: 481px) and (max-width: 1024px) {
       .events-grid { grid-template-columns: repeat(2, 1fr); }
-      .swiper { height: min(50vh, 420px); }
+      .swiper { height: 70vh; max-height: 600px; }
       .slide-caption { max-width: 50%; }
     }
