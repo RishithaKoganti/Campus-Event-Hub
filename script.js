@@ -290,7 +290,6 @@
 
 	function validateSignupForm() {
 		const name = document.getElementById('signupName').value.trim();
-		const rollNo = document.getElementById('signupRollNo').value.trim();
 		const email = document.getElementById('signupEmail').value.trim();
 		const dept = document.getElementById('signupDept').value;
 		const phone = document.getElementById('signupPhone').value.trim();
@@ -303,8 +302,8 @@
 			return false;
 		}
 
-		if (!rollNo) {
-			errorEl.textContent = 'Roll No is required.';
+		if (!/^[A-Za-z\s]+$/.test(name)) {
+			errorEl.textContent = 'Name must contain only letters (A-Z) and spaces.';
 			return false;
 		}
 
@@ -347,7 +346,6 @@
 			// Store user data in localStorage (for demo; in production, send to backend)
 			const userData = {
 				name: document.getElementById('signupName').value.trim(),
-				rollNo: document.getElementById('signupRollNo').value.trim(),
 				email: email,
 				dept: document.getElementById('signupDept').value,
 				phone: document.getElementById('signupPhone').value.trim(),
@@ -467,18 +465,43 @@
 	// Update header UI if user is logged in
 	function updateAuthUI() {
 		const loggedInUser = localStorage.getItem('loggedInUser');
+		const loginBtn = document.getElementById('loginBtn');
+		const signupBtn = document.getElementById('signupBtn');
+		const dashboardBtn = document.getElementById('dashboardBtn');
+		const logoutBtn = document.getElementById('logoutBtn');
+
 		if (loggedInUser) {
 			const userData = JSON.parse(localStorage.getItem('bvritUser_' + loggedInUser));
-			signupBtn.textContent = `Logout (${userData.name})`;
-			signupBtn.id = 'logoutBtn';
-			signupBtn.removeEventListener('click', signupBtnListener);
-			signupBtn.addEventListener('click', (e) => {
+			
+			// Hide login/signup, show dashboard/logout
+			loginBtn.style.display = 'none';
+			signupBtn.style.display = 'none';
+			dashboardBtn.style.display = 'inline-block';
+			logoutBtn.style.display = 'inline-block';
+
+			// Dashboard button: determine role and navigate
+			dashboardBtn.addEventListener('click', (e) => {
+				e.preventDefault();
+				const userRole = userData.role || 'user'; // default to user
+				if (userRole === 'admin') {
+					window.location.href = 'admin-portal.html';
+				} else {
+					window.location.href = 'user-portal.html';
+				}
+			});
+
+			// Logout button
+			logoutBtn.addEventListener('click', (e) => {
 				e.preventDefault();
 				localStorage.removeItem('loggedInUser');
-				signupBtn.textContent = 'Sign Up';
-				signupBtn.id = 'signupBtn';
-				updateAuthUI();
+				window.location.reload();
 			});
+		} else {
+			// Show login/signup, hide dashboard/logout
+			loginBtn.style.display = 'inline-block';
+			signupBtn.style.display = 'inline-block';
+			dashboardBtn.style.display = 'none';
+			logoutBtn.style.display = 'none';
 		}
 	}
 
